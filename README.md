@@ -112,3 +112,12 @@ Mockaroo, LLC. (2021). Realistic Data Generator. [https://www.mockaroo.com/](htt
 - - -
 
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+
+Files importing order
+1 departments
+2 titles
+3 employees
+4 dept_emp
+5 dept_manager
+6 salaries
+
