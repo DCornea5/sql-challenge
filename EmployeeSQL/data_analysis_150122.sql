@@ -1,5 +1,5 @@
 --1. List the following details of each employee: employee number, last name, first name, sex, and salary.
-SELECT e.emp_no As "Emp_No", e.last_name AS "Last Name", e.first_name AS "First Name", e.sex AS "Sex", e.hire_date AS "Hire Date", s.salary AS "Salary"
+SELECT e.emp_no As "Emp_No", e.last_name AS "Last Name", e.first_name AS "First Name", e.sex AS "Sex", s.salary AS "Salary"
 FROM employees e
 JOIN salaries s
 ON e.emp_no = s.emp_no
@@ -36,7 +36,7 @@ FROM employees e
 WHERE e.first_name='Hercules' AND e.last_name LIKE 'B%' ;
 
 --6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
-SELECT e.emp_no AS "Emp.No", e.last_name AS "Last Name", e.first_name AS "Fisrt Name", d.dept_name AS "Department Name"
+SELECT e.emp_no AS "Emp.No", e.last_name AS "Last Name", e.first_name AS "First Name", d.dept_name AS "Department Name"
 FROM employees e
 JOIN dept_emp de
 ON de.emp_no = e.emp_no

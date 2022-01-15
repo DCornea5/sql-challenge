@@ -2,12 +2,14 @@
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/1kPrUK
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
+
 DROP TABLE IF EXISTS departments cascade;
+DROP TABLE IF EXISTS titles cascade;
+DROP TABLE IF EXISTS employees cascade;
 DROP TABLE IF EXISTS dept_emp cascade;
 DROP TABLE IF EXISTS dept_manager cascade;
-DROP TABLE IF EXISTS employees cascade;
 DROP TABLE IF EXISTS salaries cascade;
-DROP TABLE IF EXISTS titles cascade;
+
 
 CREATE TABLE "departments" (
     "dept_no" VARCHAR(5)   NOT NULL,
@@ -17,14 +19,12 @@ CREATE TABLE "departments" (
      )
 );
 
-CREATE TABLE "dept_emp" (
-    "emp_no" INT   NOT NULL,
-    "dept_no" VARCHAR(5)   NOT NULL
-);
-
-CREATE TABLE "dept_manager" (
-    "dept_no" VARCHAR(5)   NOT NULL,
-    "emp_no" INT  NOT NULL
+CREATE TABLE "titles" (
+    "title_id" VARCHAR(7)   NOT NULL,
+    "title" VARCHAR(25)   NOT NULL,
+    CONSTRAINT "pk_titles" PRIMARY KEY (
+        "title_id"
+     )
 );
 
 CREATE TABLE "employees" (
@@ -40,17 +40,20 @@ CREATE TABLE "employees" (
      )
 );
 
+
+CREATE TABLE "dept_emp" (
+    "emp_no" INT   NOT NULL,
+    "dept_no" VARCHAR(5)   NOT NULL
+);
+
+CREATE TABLE "dept_manager" (
+    "dept_no" VARCHAR(5)   NOT NULL,
+    "emp_no" INT  NOT NULL
+);
+
 CREATE TABLE "salaries" (
     "emp_no" INT   NOT NULL,
     "salary" INT   NOT NULL
-);
-
-CREATE TABLE "titles" (
-    "title_id" VARCHAR(7)   NOT NULL,
-    "title" VARCHAR(25)   NOT NULL,
-    CONSTRAINT "pk_titles" PRIMARY KEY (
-        "title_id"
-     )
 );
 
 ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_emp_no" FOREIGN KEY("emp_no")
@@ -70,4 +73,15 @@ REFERENCES "titles" ("title_id");
 
 ALTER TABLE "salaries" ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
+
+-- set the date style
+ALTER DATABASE "EmployeeSQL" SET datestyle TO "ISO, MDY";
+
+-- import the CSV files in the following order:
+-- 1. departments
+-- 2. titles
+-- 3. employees
+-- 4. dept_emp
+-- 5. dept_manager
+-- 6. salaries
 
