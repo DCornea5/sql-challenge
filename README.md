@@ -32,7 +32,7 @@ List of all employees in the Sales department
 List of all employees in the Sales and Development departments
 Frequency count of employee last names, in descending order
 
-* Pandas Analysis
+## Pandas Analysis
 
 Create a Jupyter Notebook for Pandas analysis
 
@@ -41,9 +41,11 @@ Import the SQL database into Pandas
 Create a histogram to visualize the most common salary ranges for employees.
 ![Most Common Salary Ranges.png](./EmployeeSQL/Output/Fig_Most_Common_Salary_Ranges.png)
 
+
 Create a bar chart of average salary by title.
+
 ![Average Salary by Title.png](./EmployeeSQL/Output/Fig_Average_Salary_by_Title.png)
 
-* check if employee ID number 499942 exists
+Review data to find out if employee ID number 499942 exists
 
 
