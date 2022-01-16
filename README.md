@@ -33,7 +33,7 @@ List of all employees in the Sales department
 List of all employees in the Sales and Development departments  
 Frequency count of employees last names, in descending order  
 
-## Pandas Analysis
+### Pandas Analysis
 
 Create a Jupyter Notebook for Pandas analysis  
 
